@@ -19,7 +19,7 @@ class CreateBanksTable extends Migration
             $table -> string('address') -> nullable();
             $table -> bigInteger('location_id') -> unsigned();
             $table -> longText('descriptions') -> nullable();
-            $table -> foreign('location_id') -> references('id') -> on('locations');
+            $table -> foreign('location_id') -> references('id') -> on('locations') -> onDelete('cascade');
             $table -> softDeletes();
             $table->timestamps();
         });
