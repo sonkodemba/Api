@@ -3,7 +3,9 @@
 namespace Database\Factories;
 
 use App\Models\Bank;
+use App\Models\Location;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class BankFactory extends Factory
 {
@@ -22,7 +24,26 @@ class BankFactory extends Factory
     public function definition()
     {
         return [
-            //
+            /**
+             * Data Definition for the field
+             * find below are the data.
+            +--------------+-----------------+------+-----+---------+----------------+
+            | Field        | Type            | Null | Key | Default | Extra          |
+            +--------------+-----------------+------+-----+---------+----------------+
+            | id           | bigint unsigned | NO   | PRI | NULL    | auto_increment |
+            | name         | varchar(255)    | NO   | UNI | NULL    |                |
+            | address      | varchar(255)    | YES  |     | NULL    |                |
+            | location_id  | bigint unsigned | NO   | MUL | NULL    |                |
+            | descriptions | longtext        | YES  |     | NULL    |                |
+            | deleted_at   | timestamp       | YES  |     | NULL    |                |
+            | created_at   | timestamp       | YES  |     | NULL    |                |
+            | updated_at   | timestamp       | YES  |     | NULL    |                |
+            +--------------+-----------------+------+-----+---------+----------------+
+             */
+            'name' => $this-> faker -> name,
+            'address' => $this -> faker -> sentence(3),
+            'location_id' => Location::factory(),
+            'descriptions' => $this -> faker -> sentence(4)
         ];
     }
 }
