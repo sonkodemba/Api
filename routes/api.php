@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\DesignationController;
-use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\Api\DepartmentController;
+use App\Http\Controllers\Api\LocationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResources([
     'departments' => DepartmentController::class,
     'designations' => DesignationController::class,
+    'banks' => LocationController::class,
+    'locations' => LocationController::class
     ]);
