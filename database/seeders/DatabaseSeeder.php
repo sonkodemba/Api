@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             BankSeeder::class,
             DepartmentSeeder::class,
             DesignationSeeder::class,
+            MaritalStatusSeeder::class,
+            GenderSeeder::class,
             UserSeeder::class
         ]);
     }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Bank;
+namespace App\Http\Resources\MaritalStatus;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class BankCollection extends ResourceCollection
+class MaritalStatusCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
@@ -14,10 +14,6 @@ class BankCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        /**
-         * THis return an entire array or Collection of Data
-         * in JSON array, to the transformer or for Resource Transformation
-         */
         return parent::toArray($request);
     }
 }
