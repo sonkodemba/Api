@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Department\DepartmentResourceTransformer;
 use App\Models\Department;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
@@ -45,11 +46,11 @@ class DepartmentController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Department  $department
-     * @return Response
+     * @return DepartmentResourceTransformer
      */
     public function show(Department $department)
     {
-        //
+        return new DepartmentResourceTransformer($department);
     }
 
     /**
