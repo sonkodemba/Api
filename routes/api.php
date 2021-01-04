@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\DesignationController;
 use App\Http\Controllers\Api\DepartmentController;
 use App\Http\Controllers\Api\LocationController;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,5 +26,6 @@ Route::apiResources([
     'departments' => DepartmentController::class,
     'designations' => DesignationController::class,
     'banks' => LocationController::class,
-    'locations' => LocationController::class
+    'locations' => LocationController::class,
+    'users' => User::class,
     ]);
