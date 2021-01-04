@@ -15,6 +15,12 @@ class CreateBanksTable extends Migration
     {
         Schema::create('banks', function (Blueprint $table) {
             $table->id();
+            $table -> string('name') -> unique();
+            $table -> string('address') -> nullable();
+            $table -> bigInteger('location_id') -> unsigned();
+            $table -> longText('descriptions') -> nullable();
+            $table -> foreign('location_id') -> references('id') -> on('locations');
+            $table -> softDeletes();
             $table->timestamps();
         });
     }
