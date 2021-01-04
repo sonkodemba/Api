@@ -22,8 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResources([
     'departments' => DepartmentController::class,
-//    'designations' => DesignationController::class
-]);
-//Route::group(['prefix' => 'title'], function (){
-//    Route::apiResource('/designations', DesignationController::class);
-//});
+    'designations' => DesignationController::class,
+    ]);
