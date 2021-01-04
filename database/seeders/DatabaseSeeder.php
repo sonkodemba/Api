@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
             DepartmentSeeder::class,
             DesignationSeeder::class,
             UserSeeder::class
-
         ]);
     }
 }
