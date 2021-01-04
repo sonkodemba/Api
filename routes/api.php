@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\DesignationController;
+use App\Http\Controllers\DepartmentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('data',[\App\Http\Controllers\dummyController::class,'getData']);
+Route::apiResources([
+    'departments' => DepartmentController::class,
+//    'designations' => DesignationController::class
+]);
+//Route::group(['prefix' => 'title'], function (){
+//    Route::apiResource('/designations', DesignationController::class);
+//});
